@@ -1,146 +1,189 @@
-# Vibe Coding Templates
+# Vibe Coding - Design & Development Templates
 
-A comprehensive collection of project creation templates that guide developers through establishing new repositories with consistent patterns and best practices.
+A collection of comprehensive templates for modern software development, including detailed design systems and development best practices.
 
-## Overview
+## 📚 Contents
 
-This template system provides structured guidance for six distinct project types:
+### 🎨 Design Templates
+- **[Frontend Design Guide](frontend/design-template.md)** - Complete UI/UX design system (2000+ lines)
+- **[Mobile iOS Design Guide](mobile-ios/design-template.md)** - iOS-specific design patterns
+- **[Mobile Android Design Guide](mobile-android/design-template.md)** - Android-specific design patterns
 
-- **Frontend** - UI development projects (React, Vue, Svelte, etc.)
-- **Backend API** - API service projects (REST, GraphQL, gRPC)
-- **Backend Worker** - Background job processing projects
-- **Database Design** - Database schema and data modeling projects
-- **Mobile iOS** - Native iOS application projects (Swift, SwiftUI, UIKit)
-- **Mobile Android** - Native Android application projects (Kotlin, Jetpack Compose)
+### 💻 Development Templates
+- **[Frontend Template](frontend/template.md)** - React, Vue, Angular best practices
+- **[Backend API Template](backend-api/template.md)** - REST API development guide
+- **[Backend Worker Template](backend-worker/template.md)** - Background job processing
+- **[Database Design Template](database-design/template.md)** - Database architecture patterns
+- **[Mobile iOS Template](mobile-ios/template.md)** - iOS development guide
+- **[Mobile Android Template](mobile-android/template.md)** - Android development guide
 
-Each template serves as both an initial project setup guide and ongoing reference documentation, covering everything from language selection through deployment.
+## 🎯 Quick Start
 
-## Directory Structure
+**New here? Read [GETTING_STARTED.md](GETTING_STARTED.md)** for a quick guide.
 
-```plaintext
-vibe-coding-templates/
-├── README.md                    # This file
-├── TEMPLATE_STRUCTURE.md        # Defines the standard template structure
-├── TEMPLATE_OUTLINE.md          # Base outline for creating new templates
-├── frontend/
-│   └── template.md             # Frontend project template
-├── backend-api/
-│   └── template.md             # Backend API project template
-├── backend-worker/
-│   └── template.md             # Backend worker project template
-├── database-design/
-│   └── template.md             # Database design template
-├── mobile-ios/
-│   └── template.md             # Mobile iOS project template
-└── mobile-android/
-    └── template.md             # Mobile Android project template
+### The Key Pattern
+
+Find anything with this simple grep command:
+
+```bash
+grep -n "### Section Title" filename.md -A 50
 ```
 
-## Using the Templates
+This works even when documents change - no need to track line numbers!
+
+## 🔍 Common Searches
+
+### Design System
+
+```bash
+# Find color palette
+grep -n "### Primary Colors" frontend/design-template.md -A 30
+
+# Find button specs
+grep -n "### Buttons" frontend/design-template.md -A 80
+
+# Find typography
+grep -n "### Type Scale" frontend/design-template.md -A 40
+
+# List all sections
+grep -n "^## " frontend/design-template.md
+```
+
+### Development Templates
+
+```bash
+# Find framework recommendations
+grep -n "## Framework Recommendations" frontend/template.md -A 100
+
+# Find testing strategies
+grep -n "## Testing Approaches" frontend/template.md -A 100
+
+# Find deployment info
+grep -n "## Deployment Considerations" frontend/template.md -A 80
+```
+
+## 🎨 Design System Features
+
+The design templates include comprehensive specifications for:
+
+- **Color Palette** - Primary, secondary, semantic, and neutral colors with dark mode
+- **Typography** - Font families, type scales, weights, and usage guidelines
+- **Spacing System** - Consistent 4px-based spacing scale
+- **Layout System** - 12-column grid, breakpoints, and responsive patterns
+- **30+ Components** - Buttons, inputs, modals, tables, charts, navigation, and more
+- **Animations** - Motion principles, durations, easing, and micro-interactions
+- **Accessibility** - WCAG AA compliance guidelines and implementation
+- **Mobile Patterns** - Touch gestures, bottom sheets, and mobile-specific UI
+- **Design Tokens** - CSS variables, JavaScript/TypeScript, and Tailwind config
+
+## 🛠️ Development Templates
+
+Each template includes:
+
+- **Technology Recommendations** - Language and framework choices with trade-offs
+- **Architecture Patterns** - Proven patterns for scalable applications
+- **Best Practices** - Industry-standard practices and conventions
+- **Code Examples** - Real-world, copy-paste ready examples
+- **Testing Strategies** - Unit, integration, and E2E testing approaches
+- **Deployment Guidelines** - CI/CD, hosting, and monitoring
+- **Common Pitfalls** - What to avoid and why
+
+## 📁 Directory Structure
+
+```plaintext
+vibe-coding/
+├── README.md                           # This file
+├── GETTING_STARTED.md                  # Quick start guide
+├── TEMPLATE_STRUCTURE.md               # Template structure guidelines
+├── TEMPLATE_OUTLINE.md                 # Base outline for new templates
+├── frontend/
+│   ├── template.md                     # Frontend development template
+│   └── design-template.md              # Frontend design system (2000+ lines)
+├── backend-api/
+│   └── template.md                     # Backend API template
+├── backend-worker/
+│   └── template.md                     # Background worker template
+├── database-design/
+│   └── template.md                     # Database design template
+├── mobile-ios/
+│   ├── template.md                     # iOS development template
+│   └── design-template.md              # iOS design system
+└── mobile-android/
+    ├── template.md                     # Android development template
+    └── design-template.md              # Android design system
+```
+
+## 💡 Pro Tips
+
+### Create Search Aliases
+
+Add to your `.bashrc` or `.zshrc`:
+
+```bash
+# Quick search function
+design() {
+  grep -n "$1" -i -C 5 --color=always frontend/design-template.md | less -R
+}
+
+# Usage: design "button"
+```
+
+### Open in Editor at Specific Line
+
+```bash
+# Find and open in VS Code
+LINE=$(grep -n "### Buttons" frontend/design-template.md | cut -d: -f1)
+code --goto frontend/design-template.md:$LINE
+
+# Or with vim
+vim +$LINE frontend/design-template.md
+```
+
+### Search All Files
+
+```bash
+# Search all markdown files
+grep -rn "authentication" *.md
+
+# Search design guides only
+grep -rn "color palette" */design-template.md
+```
+
+## 📖 Using the Templates
 
 ### For Project Creation
 
-1. **Choose your project type** - Select the folder that matches your project (frontend, backend-api, backend-worker, database-design, mobile-ios, or mobile-android)
-2. **Read the template** - Review the complete template for your project type
-3. **Adapt to your needs** - Use the template as a guide, adapting recommendations to your specific requirements
-4. **Reference ongoing** - Keep the template as a reference throughout development
+1. **Choose your project type** - Select the appropriate template
+2. **Read the template** - Review the complete guide
+3. **Adapt to your needs** - Customize recommendations for your project
+4. **Reference ongoing** - Keep as a reference throughout development
 
-### For Template Creation
+### For Design Implementation
 
-If you need to create a new template or modify existing ones:
+1. **Review design system** - Understand the color, typography, and spacing
+2. **Implement design tokens** - Set up CSS variables or design tokens
+3. **Build components** - Follow component specifications
+4. **Test accessibility** - Ensure WCAG compliance
 
-1. **Review TEMPLATE_STRUCTURE.md** - Understand the required sections and formatting guidelines
-2. **Use TEMPLATE_OUTLINE.md** - Start with the base outline as your template
-3. **Follow the checklist** - Ensure all required sections are complete
-4. **Maintain consistency** - Keep formatting and structure consistent with other templates
+## 🤝 Contributing
 
-## Template Features
+Contributions welcome! Please:
+1. Follow the existing structure and formatting
+2. Include practical examples
+3. Add grep-friendly section headers (## and ### format)
+4. Test all examples before submitting
 
-### Comprehensive Coverage
-Each template covers all essential aspects of project setup:
-- Language and technology choices with rationale
-- Framework recommendations with trade-offs
-- Architecture patterns and design approaches
-- Best practices and common pitfalls
-- Code style and formatting conventions
-- Testing strategies and approaches
-- Deployment considerations and CI/CD
+## 📄 License
 
-### Adaptable & Reusable
-Templates are designed to be:
-- General enough to apply across different projects
-- Flexible with options rather than prescriptive solutions
-- Focused on patterns and principles
-- Suitable for both small projects and large teams
+MIT License - feel free to use and adapt for your projects
 
-### Well-Structured
-All templates follow a consistent structure:
-- Clear section hierarchy for easy navigation
-- Logical, progressive organization
-- Consistent formatting throughout
-- Standalone documents that can be copied or referenced
+## 💬 Support
 
-## Project-Specific Content
+For questions or suggestions:
+- Open an issue on GitHub
+- Submit a pull request
+- Check [GETTING_STARTED.md](GETTING_STARTED.md) for common questions
 
-Each template includes specialized sections for its project type:
+---
 
-**Frontend Templates** cover:
-- State management patterns
-- Component architecture
-- Accessibility and performance
-- Build tools and bundling
-
-**Backend API Templates** cover:
-- API design patterns (REST, GraphQL, gRPC)
-- Authentication and authorization
-- Error handling and logging
-- Security best practices
-
-**Backend Worker Templates** cover:
-- Queue management
-- Job scheduling and retry logic
-- Concurrency and worker pools
-- Monitoring and observability
-
-**Database Design Templates** cover:
-- Schema design and normalization
-- Migration management
-- Indexing and query optimization
-- Backup and recovery strategies
-
-**Mobile iOS Templates** cover:
-- UIKit vs SwiftUI patterns
-- iOS app architecture (MVC, MVVM, VIPER, TCA)
-- Data persistence (Core Data, SwiftData, Realm)
-- App Store submission and TestFlight
-
-**Mobile Android Templates** cover:
-- Views vs Jetpack Compose patterns
-- Android app architecture (MVVM, MVI, Clean Architecture)
-- Data persistence (Room, DataStore)
-- Play Store submission and internal testing
-
-## Contributing
-
-When creating or updating templates:
-
-1. Ensure all required sections are present and complete
-2. Include rationale for all recommendations
-3. Provide trade-offs between different approaches
-4. Keep content general and reusable
-5. Follow the formatting guidelines in TEMPLATE_STRUCTURE.md
-6. Validate against the template checklist
-
-## Design Principles
-
-The template system is built on these core principles:
-
-- **Consistency** - All templates follow the same structural pattern
-- **Comprehensiveness** - Each template covers all essential aspects
-- **Adaptability** - Templates provide guidance that can be tailored
-- **Clarity** - Content is organized logically with clear headers
-- **Actionability** - Recommendations are concrete and implementable
-
-## License
-
-[Add your license information here]
+**Happy Coding!** 🚀 Build better with consistent design and development patterns.
