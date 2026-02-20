@@ -693,8 +693,69 @@ Base spacing unit: 4px (0.25rem)
 - Duration: 4s (info), 6s (success), 8s (error), persistent (warning)
 - Animation in: Slide from right, 300ms
 - Animation out: Fade and slide right, 200ms
-- Hover: Pause auto-dismiss
 - Stack: Max 3 visible, queue others
+
+### Data Tables
+
+**Table Container**
+- Border radius: 8px
+- Border: 1px solid Gray 200
+- Background: White
+- Overflow: Auto (horizontal scroll for responsive data)
+- Shadow: 0 1px 3px rgba(0, 0, 0, 0.05)
+
+**Table Header**
+- Background: Gray 50
+- Font: 12px, weight 600, uppercase
+- Color: Gray 500
+- Padding: 12px 24px
+- Border bottom: 1px solid Gray 200
+- Alignment: Left for text, right for numbers
+- Hover effect on sortable columns
+
+**Table Body / Rows**
+- Background: White
+- Font: 14px, weight 400
+- Color: Gray 900
+- Padding: 16px 24px
+- Border bottom: 1px solid Gray 200 (except last row)
+- Row hover: Gray 50
+- Zebra striping: Optional (Gray 50 for alternate rows)
+- Active/Selected row: Primary 50 background
+
+**Pagination Area**
+- Position: Bottom of table
+- Border top: 1px solid Gray 200
+- Padding: 12px 24px
+- Elements: Rows per page selector, current range text, navigation buttons
+
+### Trend Charts
+
+**Chart Container**
+- Border radius: 8px
+- Padding: 24px
+- Background: White
+- Shadow: 0 1px 3px rgba(0, 0, 0, 0.05)
+
+**Axes & Grid**
+- Axis lines: Gray 200
+- Grid lines: Gray 100, dashed or solid
+- Labels: 12px, Gray 500
+- Padding: Minimum 10px between labels and grid
+
+**Data Series**
+- Line Chart Stroke: 2px - 3px
+- Colors: Primary 500, Secondary 500, Info 500, Warning 500
+- Data Points: 4px radius on hover
+- Fill (Area Chart): Gradient from 20% opacity to 0% at bottom
+
+**Tooltips**
+- Background: Gray 900
+- Border radius: 4px
+- Text: White, 12px
+- Padding: 8px 12px
+- Shadow: 0 4px 6px rgba(0, 0, 0, 0.1)
+- Include color indicator dot for the data series
 
 ### Modal / Dialog
 
